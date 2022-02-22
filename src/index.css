@@ -1,13 +1,150 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@200;300;400;500;600;700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+*{
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.App{
+  width: 100%;
+  height: 100vh;
+  background-image: url('./assets/bg.png');
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-wrapper{
+  background: #fff;
+  width: 70%;
+  min-height: 70vh;
+  border-radius: 30px;
+  display: flex;
+}
+.wrapper__leftside{
+  flex:1;
+  background: #0039CDBF;
+  border-radius: 30px 0 0 30px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.wrapper__leftside img{
+   width: 350px;
+   height: 350px;
+   border-radius: 50%;
+   object-fit: cover;
+}
+.leftside__details{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper__leftside h5{
+   font-size: 28px;
+   width: 80%;
+   text-align: center;
+}
+.wrapper__leftside p{
+  font-size: 20px;
+  width: 60%;
+  font-weight: 300;
+   text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*-----------------Rightside css---------------*/
+
+.wrapper__rightside{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.wrapper__rightside img{
+  width: 200px;
+}
+.wrapper__rightside form{
+  width: 60%;
+}
+.input-div{
+  position:relative;
+  width: 100%;
+  height: 3rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+}
+.input-div input{
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 10px 16px;
+  font-size: 20px;
+}
+.input-div label{
+  position: absolute;
+  top: 10px;
+  left: 16px;
+  font-size: 18px;
+  transition: 0.5s;
+  color: gray;
+  pointer-events: none;
+}
+.input-div input:focus{
+  outline: 1px solid #0048ffbf;
+}
+.input-div input:focus ~ label,
+.input-div input:valid ~label,
+.input-div input:not([value=''])~label{
+  top: -0.725rem;
+  left: 12px;
+  background: #fff;
+  padding: 0 5px;
+  color: #0039CDBF;
+}
+.login-button{
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: #0039CDBF;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+.login-button:hover{
+  background-color: #0048ffbf;
+}
+.form-bottom{
+  font-size: 18px;
+  margin-top: 10px;
+}
+.form-bottom span{
+  font-weight: 600;
+  cursor: pointer;
+  color: #0048ffbf;
+}
+
+/*--------success page-----------*/
+.success-page{
+  background: #fff;
+  padding: 0px 50px;
+
+}
+
+
+@media (max-width:1000px) {
+  .wrapper__leftside{
+    display: none;
+  }
+}
+@media (max-width:600px) {
+  .wrapper__rightside form{
+    width: 100%;
+  }
 }
